@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  model-server:
+    image: tensorflow/serving:1.12.0
+    volumes:
+      - ./model:/models/q_and_a
+    environment:
+      - MODEL_NAME=q_and_a
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
+
+  query-server:
+    build:
+      context: ./query_server/
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./model:/app/data
+      - ./conversation_ja:/app/t2t-usr
+    links:
+      - model-server:model
+    ports:
+      - "5000:5000"
+    command: bash -c "t2t-query-server --server=model:8500 --servable_name=q_and_a --problem=conversation_ja --data_dir=/app/data --t2t_usr_dir=/app/t2t-usr"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"

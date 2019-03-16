@@ -1,0 +1,3 @@
+tensorflow==1.12.0
+git+https://github.com/Drunkar/tensor2tensor-optuna.git@v1.10.0-query-server-flask
+tensorflow-serving-api

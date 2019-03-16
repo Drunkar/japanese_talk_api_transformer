@@ -1,0 +1,4 @@
+__pycache__
+model/*
+!model/0
+!model/vocab.conversation_ja.8192.subwords
