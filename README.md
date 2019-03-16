@@ -3,11 +3,11 @@
 
 日本語の会話をtensor2tensorのtransformerモデルで学習させ、Q&Aサーバー化しました。
 このリポジトリにはサンプルのモデル (`model/0`) が含まれていますが、これは学習の初期段階のモデルです。
-学習されたモデルは、(gumroad)[https://gumroad.com/l/japanese_talk_api_transformer]にて販売していますのでお買い求めください。
+学習されたモデルは、[gumroad](https://gumroad.com/l/japanese_talk_api_transformer) にて販売していますのでお買い求めください。
 
 Japanese conversation api learned by tensor2tensor's transformer model.
 This repository contain a sample model (`model/0`) but it's a first checkpoint.
-If you want a well-learned model, please buy it from my (mode)[https://gumroad.com/l/japanese_talk_api_transformer].
+If you want a well-learned model, please buy it from my [gumroad](https://gumroad.com/l/japanese_talk_api_transformer) .
 
 
 
